@@ -1,0 +1,253 @@
+/* Halaman Detail Pendaftar — tema bersih ala dokumen (kartu putih, aksen kotak) */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: #80b1e5d1;
+    color: #1f2937;
+    line-height: 1.65;
+    font-size: 14.5px;
+    padding: 40px 20px 64px;
+}
+
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.detail-container {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+    padding: 32px 36px;
+}
+
+/* Judul dengan kotak aksen kecil seperti di contoh */
+#page-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #111827;
+}
+
+#page-title::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #d9e2f1;
+    border-radius: 4px;
+    margin-right: 10px;
+    vertical-align: -2px;
+}
+
+.page-sub {
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #eef0f3;
+}
+
+/* Bagian: judul tebal sederhana */
+.info-card {
+    margin-top: 22px;
+}
+
+.info-card h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 6px;
+}
+
+/* Baris data: label abu, nilai gelap */
+.info-row {
+    display: flex;
+    gap: 14px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f2f4;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    flex: 0 0 150px;
+    color: #6b7280;
+    font-size: 13.5px;
+}
+
+.info-value {
+    flex: 1;
+    color: #1f2937;
+}
+
+/* Label status: pil lembut, tidak mencolok */
+.badge {
+    display: inline-block;
+    font-size: 12.5px;
+    padding: 2px 12px;
+    border-radius: 999px;
+    background: #eef1f5;
+    color: #4b5563;
+}
+
+.badge-primary {
+    background: #e3eaf6;
+    color: #2c4a7c;
+}
+
+.badge-success {
+    background: #e2f0e6;
+    color: #2e6b3e;
+}
+
+/* Tabel ringkas */
+table {
+    width: 100%;
+    margin-top: 22px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead th {
+    text-align: left;
+    font-weight: 700;
+    font-size: 13.5px;
+    color: #111827;
+    padding: 8px 10px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody td {
+    padding: 9px 10px;
+    border-bottom: 1px solid #f1f2f4;
+    color: #1f2937;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tbody td:first-child {
+    color: #6b7280;
+    width: 36px;
+}
+
+/* Tautan kembali */
+.btn-back {
+    display: inline-block;
+    margin-top: 26px;
+    color: #2c4a7c;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-back:hover {
+    text-decoration: underline;
+}
+
+/* Layar kecil */
+@media (max-width: 520px) {
+    .detail-container {
+        padding: 24px 20px;
+    }
+
+    .info-row {
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .info-label {
+        flex: none;
+        font-size: 12.5px;
+    }
+}
+
+/* Formulir pendaftaran */
+
+form {
+    margin-top: 22px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group > label,
+.form-label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #1f2937;
+    background: #ffffff;
+    border: 1px solid #dfe3e8;
+    border-radius: 8px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #2c4a7c;
+    box-shadow: 0 0 0 3px rgba(44, 74, 124, 0.12);
+}
+
+.form-group input::placeholder {
+    color: #9ca3af;
+}
+
+.radio-group {
+    display: flex;
+    gap: 24px;
+    padding: 4px 0;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.radio input[type="radio"] {
+    accent-color: #2c4a7c;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.btn-submit {
+    width: 100%;
+    margin-top: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #2c4a7c;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #233d66;
+}
